@@ -1,9 +1,22 @@
-import cv2
-import numpy as np
-
 def detect_environment_areas(image_path):
+    try:
+        import cv2
+        import numpy as np
+    except Exception as e:
+        return {
+            "error": (
+                "Dependências ausentes para análise de imagem (opencv-python/numpy). "
+                "Instale as dependências do backend e reinicie o servidor."
+            ),
+            "details": str(e),
+        }
 
     image = cv2.imread(image_path)
+    if image is None:
+        return {
+            "error": "Não foi possível ler a imagem enviada.",
+            "details": f"cv2.imread retornou None para: {image_path}",
+        }
 
     hsv = cv2.cvtColor(
         image,

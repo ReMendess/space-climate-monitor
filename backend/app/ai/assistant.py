@@ -1,19 +1,29 @@
 import os
-import google.generativeai as genai
 
 from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(
-    api_key=os.getenv("GEMINI_API_KEY")
-)
-
-model = genai.GenerativeModel(
-    "gemini-1.5-flash"
-)
-
 def climate_assistant(question, climate_data):
+    api_key = os.getenv("GEMINI_API_KEY")
+
+    if not api_key:
+        return (
+            "GEMINI_API_KEY não configurada no backend. "
+            "Defina a variável no `.env` e reinicie o servidor."
+        )
+
+    try:
+        import google.generativeai as genai
+    except Exception:
+        return (
+            "Dependência ausente: `google-generativeai`. "
+            "Instale as dependências do backend e reinicie o servidor."
+        )
+
+    genai.configure(api_key=api_key)
+    model_name = os.getenv("GEMINI_MODEL", "GEMINI_MODEL")
+    model = genai.GenerativeModel(model_name)
 
     prompt = f"""
     You are a climate and space monitoring AI assistant.
@@ -34,8 +44,12 @@ def climate_assistant(question, climate_data):
     Keep the answer concise.
     """
 
-    response = model.generate_content(
-        prompt
-    )
-
-    return response.text
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        return (
+            "Falha ao gerar resposta no provedor de IA. "
+            "Verifique `GEMINI_MODEL` e permissões/chave da API. "
+            f"Detalhes: {e}"
+        )

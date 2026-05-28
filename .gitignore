@@ -66,3 +66,4 @@ Desktop.ini
 *.sln
 *.sw?
 
+backend/.env
