@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^5.0.0",
+    "recharts": "^3.8.1"
+  }
+}

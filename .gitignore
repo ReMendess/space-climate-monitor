@@ -1,0 +1,68 @@
+# ===== Node / JS =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Vite / build outputs
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+wheels/
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# ===== FastAPI / runtime =====
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Uploads gerados pelo CV (imagens processadas)
+backend/app/cv/uploads/
+
+# ===== Secrets =====
+.env
+.env.*
+!.env.example
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
