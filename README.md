@@ -1,4 +1,4 @@
-# Space Climate Monitor
+# Global Solution - Space Climate Monitor
 
 <p align="center">
   <a href="https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP" width="35%"></a>
@@ -12,7 +12,16 @@
 
 # Space Climate Monitor
 
-Solução integrada de **monitoramento do clima espacial** que combina inteligência artificial, visão computacional, automação web e análise de dados em tempo real para prever e analisar fenômenos espaciais que impactam a Terra.
+Conforme o desafio proposto pelo Global Solution do ano de 2026:
+
+Como tecnologias avançadas de Inteligência Artificial, automação e computação podem impulsionar soluções inovadoras para a nova economia espacial?
+
+
+Criei a solução integrada de **monitoramento do clima espacial** que combina inteligência artificial, visão computacional, automação web e análise de dados em tempo real para prever e analisar fenômenos espaciais que impactam a Terra.
+
+### Link do vídeo: 
+
+<img src="assets/space_monitor_home.png" widht="150">
 
 ---
 
@@ -49,40 +58,75 @@ Solução integrada de **monitoramento do clima espacial** que combina inteligê
 
 O **Space Climate Monitor** monitora, analisa e prevê fenômenos de clima espacial que podem afetar sistemas de comunicação, navegação por satélite, redes elétricas e operações espaciais na Terra.
 
-Fenômenos como **tempestades solares**, **ejeções de massa coronal (CMEs)** e **ventos solares** podem causar:
+Eventos como **tempestades solares**, **ejeções de massa coronal (CMEs)** e **ventos solares** podem causar:
 
 - Interrupções em sinais de GPS e comunicações via satélite
 - Sobrecargas em redes elétricas terrestres
-- Riscos aumentados para astronautas e missões espaciais
+- Riscos para astronautas em missões espaciais
 - Degradação de componentes eletrônicos em satélites
 
-O **Space Climate Monitor** processa dados em tempo real de múltiplas fontes — imagens solares (SOHO, SDO), sensores de campo magnético e estações de monitoramento — e aplica **Machine Learning**, **Visão Computacional** e **IA Generativa** para fornecer alertas preditivos, análises contextuais e visualizações interativas.
+O **Space Climate Monitor** processa dados em tempo real de múltiplas fontes — imagens solares, sensores de campo magnético e estações de monitoramento — e aplica **Machine Learning**, **Visão Computacional** e **IA Generativa** para fornecer alertas preditivos, análises contextuais e visualizações interativas.
 
 ### Principais funcionalidades
 
 | Funcionalidade | Descrição |
 |----------------|-----------|
-| **Monitoramento em tempo real** | Coleta e processa dados de agências espaciais (NOAA, NASA) via automação web |
+| **Monitoramento em tempo real** | Coleta e processa dados de agências espaciais via automação web |
 | **Análise de imagens solares** | Visão computacional para detectar erupções solares e manchas no Sol |
 | **Previsão com ML** | Modelos preditivos de tempestades geomagnéticas baseados em séries temporais |
 | **Chat inteligente (RAG)** | Tire dúvidas sobre clima espacial em linguagem natural com respostas contextuais |
 | **Dashboards interativos** | Visualização de dados históricos e em tempo real com React |
 | **Alertas automáticos** | Notificações sobre eventos solares de alto impacto |
 
+## Captação de dados
+
+Utilizando ferramentas, bibliotecas e técnicas de webscraping, mais conhecido como coleta automatizada de dados, criei um programa que busca nos principais sites dados e informações espaciais relevantes.
+
+Além de exibir os dados no dashboard, é possível, utilizando técnicas deNLP (Natural Language Processing ou Processamento de Linguagem Natural), realizar a extração de features, embbedings e vetorização do texto para alimentar modelos de IA. 
+
+<img src="assets/webscraping.png" widht="150">
+
+## Análise de imagens solares
+
+Utilizando técnologias modernas de visão computacional, treinei um modelo capaz de identificar pontos de interesses, erupções e eventos solares. Permitindo o estudo, monitoramento e predição de condições climaticas.
+
+<img src="assets/satellite_analysis.png" widht="150">
+
+## Machine Learning
+
+A solução está a todo momento integrada a diversos pipelines, rodando modelo preditivos de machine learning utilizando séries temporais.
+
+Dessa forma conseguimos prever tempestades geomagnéticas, asteroides, cometas e demais eventos espaciais.
+
+<img src="assets/space_monitor_home.png" widht="150">
+
+## Assistente Inteligente
+
+Criei um agente conversacional inteligente, que utiliza RAG e linguagem natural com respostas contextuais para explicar, guiar e tirar dúvidas do operador ou o time de negócios.
+
+<img src="assets/Climate_assistant.png" widht="150">
+
+## Alertas
+
+Utilizando monitoramento em tempo real, chamadas de APIs, a solução está sempre ativa e pronta para alertar casos graves de eventos solares adversos.
+
+<img src="assets/alertas.png" widht="150">
+
+
 ---
 
 ## Problema de negócio
 
-O clima espacial é um dos **maiores riscos naturais para a infraestrutura tecnológica moderna**. A cada 11 anos o Sol atinge o pico de sua atividade (máximo solar), aumentando drasticamente a frequência e intensidade de eventos capazes de causar:
+O clima espacial é um dos **maiores riscos naturais para a infraestrutura tecnológica moderna**. A cada 11 anos o Sol atinge o pico de sua atividade, aumentando drasticamente a frequência e intensidade de eventos capazes de causar:
 
 - **Prejuízos bilionários** em satélites e redes de comunicação
 - **Apagões elétricos** em larga escala (ex: Quebec, 1989)
 - **Riscos à aviação** — rotas polares perdem comunicação via rádio
 - **Perda de dados** e falhas em sistemas críticos
 
-### Personas
+### Stakeholders
 
-| Persona | Necessidade |
+| Stakeholders | Necessidade |
 |---------|-------------|
 | **Operador de satélites** | Antecipar tempestades solares para manobras preventivas |
 | **Companhia elétrica** | Proteger redes de distribuição contra correntes geomagneticamente induzidas |
@@ -96,9 +140,9 @@ O clima espacial é um dos **maiores riscos naturais para a infraestrutura tecno
 
 ### Oportunidade de Negócio
 
-O mercado de **monitoramento e mitigação de riscos climáticos espaciais** está em rápida expansão com:
+O mercado de **monitoramento de riscos climáticos espaciais** está em rápida expansão com:
 
-- O aumento da constelação de satélites em órbita baixa (Starlink, OneWeb, etc.)
+- O aumento de satélites em órbita baixa (Starlink, OneWeb, etc.)
 - A dependência global de GPS, telecomunicações e internet via satélite
 - O avanço do máximo solar (ciclo 25, 2024-2026)
 - A crescente exploração espacial comercial
@@ -137,14 +181,6 @@ O sistema opera em seis etapas integradas:
 5. **IA Generativa** — Respostas inteligentes usando modelo local (Ollama) com contexto recuperado via RAG.
 6. **Visualização** — Frontend React exibe dashboards, alertas e o chat interativo.
 
-### Exemplos de perguntas
-
-- *Qual a previsão de tempestade geomagnética para as próximas 48 horas?*
-- *Houve alguma ejeção de massa coronal significativa hoje?*
-- *Qual o impacto esperado nas comunicações via satélite?*
-- *Como está o índice Kp agora e qual a tendência?*
-
----
 
 ## Arquitetura
 
@@ -324,15 +360,10 @@ npm run dev
 
 Acesse o endereço exibido no terminal (geralmente `http://localhost:5173`).
 
-### 4. Inicie o Ollama
-
-Certifique-se de que o serviço Ollama está rodando antes de usar o chat IA.
-
----
 
 ## Interface web (React)
 
-A interface foi desenvolvida com **React + Vite** para oferecer uma experiência moderna, responsiva e interativa:
+A interface foi desenvolvida com **React + Vite**:
 
 - **Dashboard Principal** — Visualização em tempo real dos índices Kp, fluxo solar e atividade geomagnética
 - **Solar Viewer** — Imagens do Sol processadas com visão computacional destacando regiões ativas e erupções
@@ -340,24 +371,6 @@ A interface foi desenvolvida com **React + Vite** para oferecer uma experiência
 - **Alertas** — Notificações sobre eventos solares de alto impacto (tempestades G3+, CMEs direcionadas à Terra)
 - **Histórico** — Gráficos de séries temporais com dados históricos e previsões do modelo ML
 - **Mapa de Impacto** — Visualização geográfica de regiões potencialmente afetadas
-
----
-
-## API Backend
-
-O backend FastAPI expõe os seguintes endpoints:
-
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| `GET` | `/api/status` | Status do sistema e última coleta |
-| `GET` | `/api/solar-data/current` | Dados solares atuais |
-| `GET` | `/api/solar-data/historical` | Dados históricos (parâmetros: `start`, `end`) |
-| `GET` | `/api/predictions` | Previsões do modelo ML |
-| `GET` | `/api/alerts` | Alertas ativos |
-| `POST` | `/api/chat` | Pergunta ao chat IA (RAG) |
-| `GET` | `/api/images/analysis` | Resultados da análise de imagens solares |
-
-Documentação interativa disponível em `http://localhost:8000/docs` (Swagger UI).
 
 ---
 
@@ -374,42 +387,15 @@ Documentação interativa disponível em `http://localhost:8000/docs` (Swagger U
 
 ---
 
-## Próximos Passos
+## Idéias de Evolução da Solução
 
-- [ ] Integração com dados em tempo real de satélites GOES-16/18
-- [ ] Modelo de Deep Learning para previsão de CMEs (LSTM/Transformer)
-- [ ] Detecção de erupções solares classe X com YOLOv8
-- [ ] Pipeline MLOps automatizado (retreinamento periódico)
+- [ ] Integração com dados em tempo real de satélites
+- [ ] Modelo de Deep Learning para previsão de Tempestades solares (LSTM/Transformer)
+- [ ] Pipeline MLOps automatizado
 - [ ] Deploy em nuvem com escalabilidade automática
 - [ ] App mobile (React Native) para notificações push
-- [ ] Suporte a múltiplas missões e satélites simultaneamente
 - [ ] Correlação automática entre eventos solares e falhas reportadas
 - [ ] Integração com sistemas SCADA de redes elétricas
 - [ ] API pública para terceiros (pesquisadores, empresas)
 - [ ] Radar de vento solar com visualização 3D
 
-O diferencial não será apenas monitorar o clima espacial, mas **transformar dados astronômicos complexos em inteligência preditiva e acionável** para proteger a infraestrutura crítica do planeta.
-
----
-
-## User stories atendidas
-
-| ID | História | Status |
-|----|----------|--------|
-| US1 | Como operador, quero visualizar índices de clima espacial em tempo real | Implementado |
-| US2 | Como analista, quero receber alertas sobre tempestades solares iminentes | Implementado |
-| US3 | Como pesquisador, quero consultar dados históricos e previsões | Implementado |
-| US4 | Como usuário, quero fazer perguntas sobre eventos solares em linguagem natural | Implementado |
-| US5 | Como engenheiro, quero ver a análise de imagens solares com detecção de eventos | Em desenvolvimento |
-
----
-
-## Licença e contexto acadêmico
-
-Projeto desenvolvido para fins educacionais na **FIAP**. Dados utilizados são provenientes de fontes públicas (NOAA Space Weather Prediction Center, NASA Heliophysics) e seguem suas respectivas políticas de uso.
-
----
-
-<p align="center">
-  <strong>Space Climate Monitor</strong> — Transformando dados do clima espacial em inteligência preventiva para proteger a infraestrutura do futuro.
-</p>
