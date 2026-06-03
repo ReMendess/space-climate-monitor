@@ -196,7 +196,7 @@ flowchart TB
         COL["Coletor de Dados<br>(Python)"]
         CV["Visão Computacional<br>(Detecção de eventos)"]
         ML["ML Preditivo<br>(Tempestades Geomag.)"]
-        EMB["Embeddings<br>(MiniLM)"]
+        EMB["Embeddings<br>"]
         RAG["RAG Engine"]
     end
 
@@ -211,9 +211,8 @@ flowchart TB
     WEB --> COL
     IMG --> CV
     COL --> ML
-    COL --> EMB --> VDB
+    COL --> EMB --> RAG
     CV --> ML
-    VDB --> RAG
     RAG --> LLM
     ML --> API
     LLM --> API
