@@ -19,7 +19,7 @@ Como tecnologias avançadas de Inteligência Artificial, automação e computaç
 
 Criei a solução integrada de **monitoramento do clima espacial** que combina inteligência artificial, visão computacional, automação web e análise de dados em tempo real para prever e analisar fenômenos espaciais que impactam a Terra.
 
-### Link do vídeo: 
+### Link do vídeo: https://youtu.be/8AtEKThu7fk
 
 <img src="assets/space_monitor_home.png" widht="150">
 
@@ -38,7 +38,6 @@ Criei a solução integrada de **monitoramento do clima espacial** que combina i
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação e execução](#instalação-e-execução)
 - [Interface web (React)](#interface-web-react)
-- [API Backend](#api-backend)
 - [Governança e Privacidade](#governança-e-privacidade)
 - [Próximos Passos](#próximos-passos)
 
