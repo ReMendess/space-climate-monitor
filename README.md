@@ -197,12 +197,11 @@ flowchart TB
         CV["Visão Computacional<br>(Detecção de eventos)"]
         ML["ML Preditivo<br>(Tempestades Geomag.)"]
         EMB["Embeddings<br>(MiniLM)"]
-        VDB[("Base Vetorial<br>ChromaDB")]
         RAG["RAG Engine"]
     end
 
     subgraph Frontend
-        API_REST["FastAPI<br>(API REST)"]
+        API
         REACT["React · Vite<br>(Dashboards)"]
         CHAT["Chat IA<br>(RAG + LLM)"]
         ALERT["Sistema de<br>Alertas"]
@@ -216,12 +215,12 @@ flowchart TB
     CV --> ML
     VDB --> RAG
     RAG --> LLM
-    ML --> API_REST
-    LLM --> API_REST
-    CV --> API_REST
-    API_REST --> REACT
-    API_REST --> CHAT
-    API_REST --> ALERT
+    ML --> API
+    LLM --> API
+    CV --> API
+    API --> REACT
+    API --> CHAT
+    API --> ALERT
 ```
 
 ### Pipeline de dados
@@ -250,7 +249,6 @@ Fontes externas (NOAA, NASA, SOHO, SDO)
 | **Frontend** | [React](https://react.dev/) + [Vite](https://vitejs.dev/) |
 | **Backend** | [FastAPI](https://fastapi.tiangolo.com/) (Python) |
 | **RAG / Embeddings** | `sentence-transformers/all-MiniLM-L6-v2` |
-| **Base Vetorial** | [ChromaDB](https://www.trychroma.com/) |
 | **Visão Computacional** | [OpenCV](https://opencv.org/) / [YOLO](https://github.com/ultralytics/ultralytics) |
 | **Machine Learning** | [scikit-learn](https://scikit-learn.org/) / [TensorFlow](https://www.tensorflow.org/) / [Prophet](https://facebook.github.io/prophet/) |
 | **Automação Web** | [Selenium](https://www.selenium.dev/) / [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) |
@@ -266,43 +264,50 @@ Fontes externas (NOAA, NASA, SOHO, SDO)
 space-climate-monitor/
 ├── backend/
 │   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py                 # Servidor FastAPI
-│   │   ├── config.py               # Configurações e constantes
-│   │   ├── collector.py            # Coleta de dados (APIs + web scraping)
-│   │   ├── image_analyzer.py       # Visão computacional (imagens solares)
-│   │   ├── predictive_model.py     # ML preditivo (tempestades geomagnéticas)
-│   │   ├── embeddings.py           # Modelo de embeddings (cache)
-│   │   ├── vector_store.py         # ChromaDB: criar ou reutilizar índice
-│   │   ├── rag_engine.py           # Busca + geração com Ollama
-│   │   ├── prompt_engineering.py   # System prompt e guardrails
+│   │   ├── main.py  
+│   │   └── ai/
+│   │       └── assistant.py
+│   │   └── cv/
+│   │       ├── image_detector.py
+│   │       └── uploads/
 │   │   └── routes/
-│   │       ├── __init__.py
-│   │       ├── data_routes.py      # Endpoints de dados
-│   │       ├── chat_routes.py      # Endpoints do chat IA
-│   │       └── alert_routes.py     # Endpoints de alertas
+│   │       ├── ai_routes.py         
+│   │       ├── alert_routes.py      
+│   │       ├── cv_routes.py         
+│   │       ├── news_routes.py       
+│   │       └── space_routes.py
+│   │   └── services/
+│   │       ├── alert_service.py         
+│   │       ├── nasa_service.py      
+│   │       └── news_scraper.py         
 │   ├── requirements.txt
 │   ├── package.json
-│   └── Dockerfile
 ├── frontend/
 │   ├── src/
 │   │   ├── App.jsx / App.tsx
 │   │   ├── components/
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── SolarViewer.jsx     # Visualização de imagens solares
-│   │   │   ├── ChatPanel.jsx       # Chat com RAG
-│   │   │   ├── AlertsPanel.jsx     # Alertas em tempo real
-│   │   │   └── Charts.jsx          # Gráficos e séries temporais
-│   │   ├── hooks/
+│   │   │   ├── AIChat.jsx
+│   │   │   ├── AlertCard.jsx   
+│   │   │   ├── ClimateChart.jsx       
+│   │   │   ├── ImageUpload.jsx    
+│   │   │   ├── MetricCard.jsx  
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── NewsCard.jsx    
+│   │   │   ├── Sidebar.jsx   
+│   │   │   └── WorldMap.jsx 
+│   │   ├── pages/
+│   │   │   ├── AIAssistant.jsx
+│   │   │   ├── Alert.jsx   
+│   │   │   ├── Dashboard.jsx       
+│   │   │   ├── Layout.jsx    
+│   │   │   └── SatelliteAnalysis.jsx 
 │   │   ├── services/
-│   │   │   └── api.js              # Conexão com backend
+│   │   │   └── api.js              
 │   │   └── styles/
 │   ├── index.html
 │   ├── vite.config.js
 │   ├── package.json
-│   └── Dockerfile
 ├── assets/
-│   └── logo-fiap.png
 ├── requirements.txt
 ├── package.json
 ├── .gitignore
@@ -341,7 +346,7 @@ python -m venv .venv
 pip install -r backend/requirements.txt
 
 # Inicie o servidor
-uvicorn backend.app.main:app --reload --port 8000
+uvicorn app.main:app --reload
 ```
 
 ### 3. Frontend (React/Vite)
