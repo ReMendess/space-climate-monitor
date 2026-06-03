@@ -199,7 +199,6 @@ flowchart TB
         EMB["Embeddings<br>(MiniLM)"]
         VDB[("Base Vetorial<br>ChromaDB")]
         RAG["RAG Engine"]
-        LLM["Ollama · Mistral"]
     end
 
     subgraph Frontend
@@ -250,7 +249,6 @@ Fontes externas (NOAA, NASA, SOHO, SDO)
 |--------|------------|
 | **Frontend** | [React](https://react.dev/) + [Vite](https://vitejs.dev/) |
 | **Backend** | [FastAPI](https://fastapi.tiangolo.com/) (Python) |
-| **LLM local** | [Ollama](https://ollama.com/) + modelo `mistral` |
 | **RAG / Embeddings** | `sentence-transformers/all-MiniLM-L6-v2` |
 | **Base Vetorial** | [ChromaDB](https://www.trychroma.com/) |
 | **Visão Computacional** | [OpenCV](https://opencv.org/) / [YOLO](https://github.com/ultralytics/ultralytics) |
@@ -317,12 +315,8 @@ space-climate-monitor/
 
 1. **Python 3.10+**
 2. **Node.js 18+**
-3. **Ollama** instalado e em execução
-4. Modelo **mistral** baixado no Ollama:
-   ```bash
-   ollama pull mistral
-   ```
-5. **Chave de API** para fontes de dados (NOAA SWPC, NASA DONKI) — gratuitas e abertas
+3. **Chave de API - Modelo de LLM**
+4. **Chave de API** para fontes de dados (NOAA SWPC, NASA DONKI) — gratuitas e abertas
 
 ---
 
@@ -379,8 +373,7 @@ A interface foi desenvolvida com **React + Vite**:
 | Aspecto | Abordagem |
 |---------|-----------|
 | **Dados utilizados** | Fontes públicas e abertas (NOAA, NASA) — sem dados sensíveis |
-| **Armazenamento local** | Base vetorial e cache processados localmente |
-| **LLM local** | Ollama — nenhum dado enviado para nuvem |
+| **Armazenamento** | Base vetorial e cache processados localmente |
 | **Guardrails da IA** | Sem recomendações operacionais críticas sem validação humana |
 | **Transparência** | Todas as fontes e previsões são referenciadas com data/hora e nível de confiança |
 | **Responsabilidade** | Aviso na interface: sistema de apoio à decisão, não substitui fontes oficiais |
