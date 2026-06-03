@@ -187,7 +187,7 @@ O sistema opera em seis etapas integradas:
 ```mermaid
 flowchart TB
     subgraph Coleta
-        API["APIs Públicas<br>(NOAA, NASA, GOES)"]
+        API_Nasa["APIs Públicas<br>(NOAA, NASA, GOES)"]
         WEB["Automação Web<br>(Web Scraping)"]
         IMG["Imagens Solares<br>(SOHO, SDO)"]
     end
@@ -207,7 +207,7 @@ flowchart TB
         ALERT["Sistema de<br>Alertas"]
     end
 
-    API --> COL
+    API_Nasa --> COL
     WEB --> COL
     IMG --> CV
     COL --> ML
