@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routes.space_routes import router as space_router
 from app.routes.news_routes import router as news_router
 
+import os
 from fastapi.staticfiles import StaticFiles
 from app.routes.cv_routes import router as cv_router
 
@@ -32,7 +33,7 @@ app.include_router(alert_router)
 
 app.mount(
     "/uploads",
-    StaticFiles(directory="app/cv/uploads"),
+    StaticFiles(directory=os.path.join(os.path.dirname(__file__), "cv", "uploads")),
     name="uploads"
 )
 

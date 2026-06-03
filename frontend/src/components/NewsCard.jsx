@@ -1,4 +1,5 @@
 export default function NewsCard({ title }) {
+  const displayTitle = title || "Space news article - title unavailable";
 
   return (
     <div className="relative bg-white/5 p-6 rounded-3xl min-h-[140px] border border-white/10 backdrop-blur-md overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:border-cyan-400/30">
@@ -7,7 +8,7 @@ export default function NewsCard({ title }) {
 
       <div className="relative">
         <h2 className="text-white text-sm sm:text-base font-semibold leading-snug">
-          {title}
+          {displayTitle}
         </h2>
 
         <div className="mt-10 h-1.5 rounded-full bg-gradient-to-r from-cyan-400/40 via-purple-500/35 to-fuchsia-500/35 opacity-60" />

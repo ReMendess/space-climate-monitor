@@ -10,12 +10,20 @@ import { api } from "../services/api";
 export default function Dashboard() {
 
   const [news, setNews] = useState([]);
+  const [newsLoading, setNewsLoading] = useState(true);
 
   useEffect(() => {
 
     api.get("/news")
       .then((response) => {
         setNews(response.data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch news:", error);
+        setNews([]);
+      })
+      .finally(() => {
+        setNewsLoading(false);
       });
 
   }, []);
@@ -63,16 +71,26 @@ export default function Dashboard() {
               Space News
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {newsLoading ? (
+              <p className="text-gray-400 text-sm">Loading news...</p>
+            ) : news.length === 0 ? (
+              <div className="bg-white/5 p-6 rounded-3xl border border-white/10 backdrop-blur-md">
+                <p className="text-gray-400 text-sm">
+                  No space news available at the moment. News articles are fetched from space.com — the site may have changed its layout.
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              {news.map((item, index) => (
-                <NewsCard
-                  key={index}
-                  title={item.title}
-                />
-              ))}
+                {news.map((item, index) => (
+                  <NewsCard
+                    key={index}
+                    title={item.title}
+                  />
+                ))}
 
-            </div>
+              </div>
+            )}
 
           </div>
     </div>
